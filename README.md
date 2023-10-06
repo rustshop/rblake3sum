@@ -1,6 +1,6 @@
 # `rblake3sum`
 
-A recursive blake3 digest (hash) of a file-system path. A fork of [`rblake3sum`](https://github.com/crev-dev/rblake3sum).
+A recursive blake3 digest (hash) of a file-system path. A fork of [`rblake2sum`](https://github.com/crev-dev/rblake2sum).
 
 The recursive file-system digest algorithm used is described in a
 underlying library [crev-recursive-digest](https://github.com/crev-dev/recursive-digest).
