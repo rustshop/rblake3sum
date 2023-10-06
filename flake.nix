@@ -1,5 +1,5 @@
 {
-  description = "A recursive blake2 digest (hash) of a file-system path";
+  description = "A recursive blake3 digest (hash) of a file-system path";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
@@ -13,11 +13,11 @@
   outputs = { self, nixpkgs, flake-utils, flakebox }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        projectName = "rblake2sum";
+        projectName = "rblake3sum";
 
         flakeboxLib = flakebox.lib.${system} {
           config = {
-            github.ci.buildOutputs = [ ".#ci.rblake2sum" ];
+            github.ci.buildOutputs = [ ".#ci.rblake3sum" ];
             typos.pre-commit.enable = false;
           };
         };
@@ -46,11 +46,11 @@
               });
             in
             {
-              rblake2sum = craneLib.buildPackage { };
+              rblake3sum = craneLib.buildPackage { };
             });
       in
       {
-        packages.default = multiBuild.rblake2sum;
+        packages.default = multiBuild.rblake3sum;
 
         legacyPackages = multiBuild;
 
