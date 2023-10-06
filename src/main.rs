@@ -7,7 +7,7 @@ fn main() -> anyhow::Result<()> {
     let opts = opts::Opts::parse();
 
     for path in opts.paths {
-        let digest = crev_recursive_digest::RecursiveDigest::<blake2::Blake2b512, _, _>::new()
+        let digest = crev_recursive_digest::RecursiveDigest::<blake3::Hasher, _, _>::new()
             .build()
             .get_digest_of(&path)?;
 

@@ -1,24 +1,23 @@
 [package]
-name = "rblake2sum"
-version = "0.3.1"
+name = "rblake3sum"
+version = "0.4.0"
 authors = ["Dawid Ciężarkiewicz <dpc@dpc.pw>"]
 edition = "2018"
-description = "Calculate recursive blake2 digest for path or directory"
+description = "Calculate recursive blake3 digest for path or directory"
 keywords = ["data", "filesystem", "digest", "hash"]
 license = "MPL-2.0 OR MIT OR Apache-2.0"
-documentation = "https://docs.rs/rblake2sum"
-homepage = "https://github.com/crev-dev/rblake2sum"
-repository = "https://github.com/crev-dev/rblake2sum"
+documentation = "https://docs.rs/rblake3sum"
+homepage = "https://github.com/rustshop/rblake3sum"
+repository = "https://github.com/rustshop/rblake3sum"
 readme = "README.md"
 
 [dependencies]
 anyhow = "1.0.71"
 base64 = "0.21"
-blake2 = "0.10.6"
+blake3 = { version = "1.5.0", features = [ "traits-preview" ] }
 crev-recursive-digest = { version = "0.6.0" }
 hex = "0.4"
 clap = { version = "4.2.7", features = ["derive"] }
-
 
 [profile.release]
 lto = "fat"
